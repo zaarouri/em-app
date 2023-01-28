@@ -16,11 +16,13 @@ const studentshema = new mongoose.Schema({
         maxLenght:80,
         trim:true
     },
-    email:{
-        type:String,
-        required:true,
-        validator:[isEmail],
-        lowercase:true
+    email: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
+        validator:isEmail,
+        required: [true, "Email required"]
     },
     password:{
         type:String,
