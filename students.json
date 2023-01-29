@@ -1,0 +1,126 @@
+[{
+  "_id": {
+    "$oid": "63d014a763a0b6ea974222d7"
+  },
+  "firstName": "toto",
+  "lastName": "totoo",
+  "email": "toto@gmail.com",
+  "password": "$2b$10$vEG23WTyipQNc48NQTH3VeEX2KrCm6WK5GJCdXSEttFgkVA1M0eQW",
+  "field": "info",
+  "picture": "./assets/profil/random-user.png",
+  "followers": [],
+  "following": [],
+  "likes": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674581159585"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674993041615"
+    }
+  },
+  "__v": 0,
+  "bio": "i'm toto and i love tata"
+},{
+  "_id": {
+    "$oid": "63d015ab63a0b6ea974222da"
+  },
+  "firstName": "tata",
+  "lastName": "tata",
+  "email": "tata@gmail.com",
+  "password": "$2b$10$cVfTggSak4RTq584ye2WJelHpheTfPMDkG7LQxeowhC9a3il8KwxG",
+  "field": "gi",
+  "picture": "./assets/profil/random-user.png",
+  "followers": [],
+  "following": [],
+  "likes": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674581419238"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674907443175"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d0166179bcc26df6957dcc"
+  },
+  "firstName": "titi",
+  "lastName": "titi",
+  "email": "titi@gmail.com",
+  "password": "$2b$10$aiO775Ds2yBQLJGM.kxVFuCWk2atJD3lwj2HnVZcAhOp6AyVm0nYG",
+  "field": "ga",
+  "picture": "./assets/profil/random-user.png",
+  "followers": [
+    "63d014a763a0b6ea974222d7"
+  ],
+  "following": [],
+  "likes": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674581601977"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674992807836"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d121df493acfd31222df79"
+  },
+  "firstName": "zidane",
+  "lastName": "moulay",
+  "email": "zidane.moulay@gmail.com",
+  "password": "$2b$10$QqKKweC6scuCkwA35AM0hu7LkSEZAAYWKy7upAQO72xti/0aEhwie",
+  "field": "ir",
+  "picture": "./assets/profil/random-user.png",
+  "followers": [
+    "63d29786b053d5386f56187e"
+  ],
+  "following": [],
+  "likes": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674650079333"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674803389757"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d29786b053d5386f56187e"
+  },
+  "firstName": "nabil",
+  "lastName": "rahmouni",
+  "email": "nabil.rahmouni@gmail.com",
+  "password": "$2b$10$v0clQKpfOwQaqBtbMqGH4utMyiTgGiFzGV/0p/9Asz3UhbskCju5C",
+  "field": "IR",
+  "picture": "./assets/profil/random-user.png",
+  "followers": [],
+  "following": [],
+  "likes": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674745734057"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674803531196"
+    }
+  },
+  "__v": 0
+}]

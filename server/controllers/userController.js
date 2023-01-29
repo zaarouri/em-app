@@ -59,34 +59,71 @@ module.exports.follow = async function (req, res) {
     if (!objectID.isValid(req.params.id)|| !objectID.isValid(req.body.tofollow))
         return res.status(400).send('ID unknown :' + req.params.id)
     try {
-        //  await usermodel.findByIdAndUpdate(
-        //     req.params.id,
-        //     { $push: { following: req.body.tofollow } },
-        //     { new: true, upsert: true, },
-        //     (err, data) => {
-        //         if (!err) {
-        //             res.status(201).json("followed successfuly " + data)
-        //         } else {
-        //             res.status(400).json("error")
-        //         }
-        //     }
-        // ),
-        await usermodel.findByIdAndUpdate(
-            req.body.tofollow,
-            { $addToSet: { followers: req.params.id } },
+         await Promise.all( 
+        [usermodel.findByIdAndUpdate(
+            req.params.id,
+            { $push: { following: req.body.tofollow } },
             { new: true, upsert: true, },
             (err, data) => {
                 if (!err) {
-                    res.status(201).json(" get followed successfuly " + data)
+                    res.status(201).json("followed successfuly " + data)
                 } else {
                     res.status(400).json("error")
                 }
             }
+        ),
+         usermodel.findByIdAndUpdate(
+            req.body.tofollow,
+            { $push: { followers: req.params.id } },
+            { new: true, upsert: true, },
+            (err, data) => {
+                if (!err) {
+                    // res.status(201).json(" get followed successfuly " + data)
+                } else {
+                    res.status(400).json("error")
+                }
+            }
+        )]
         )
-
     } catch (err) {
         // res.status(500).json({message:err})
     }
+}
+
+
+module.exports.unfollow = async (req,res)=>{
+    if (!objectID.isValid(req.params.id)|| !objectID.isValid(req.body.tounfollow))
+    return res.status(400).send('ID unknown :' + req.params.id)
+try {
+     await Promise.all( 
+    [usermodel.findByIdAndUpdate(
+        req.params.id,
+        { $pull: { following: req.body.tounfollow } },
+        { new: true, upsert: true, },
+        (err, data) => {
+            if (!err) {
+                res.status(201).json("unfollowed successfuly " + data)
+            } else {
+                res.status(400).json("error")
+            }
+        }
+    ),
+     usermodel.findByIdAndUpdate(
+        req.body.tounfollow,
+        { $pull: { followers: req.params.id } },
+        { new: true, upsert: true, },
+        (err, data) => {
+            if (!err) {
+                // res.status(201).json(" get followed successfuly " + data)
+            } else {
+                res.status(400).json("error")
+            }
+        }
+    )]
+    )
+} catch (err) {
+    // res.status(500).json({message:err})
+}
 }
 
 
